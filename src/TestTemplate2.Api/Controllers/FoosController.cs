@@ -22,7 +22,7 @@ namespace TestTemplate2.Api.Controllers
             ISender sender,
             IMapper mapper)
         {
-            _sender = sender;
+            _sender = sender; 
             _mapper = mapper;
         }
 
