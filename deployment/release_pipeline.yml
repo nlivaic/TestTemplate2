@@ -4,7 +4,7 @@ pr: none
 # Pipeline resource defined as per https://bit.ly/3PhwhRk
 resources:
   pipelines:
-  - pipeline: build_pipeline  # Used to reference the pipeline reference from other parts of the code.
+  - pipeline: buildPipeline  # Used to reference the pipeline reference from other parts of the code.
     source: build_pipeline        # This must match  the build pipeline name in ADO.
                                   # By default, pipelines are named after the ADO build pipeline name.
     trigger:
@@ -27,7 +27,7 @@ jobs:
           inputs:
             targetType: 'inline'
             script: |
-              $newVersion = "$(resources.pipeline.build_pipeline.runName)"
+              $newVersion = "$(resources.pipeline.buildPipeline.runName)"
               [string] $buildName = "$($newVersion)"
               Write-Host "##vso[build.updatebuildnumber]$buildName"
 
@@ -37,7 +37,7 @@ jobs:
           displayName: 'Download Artifact TestTemplate2.Api'
           inputs:
             buildType: 'specific'
-            definition: build_pipeline
+            definition: buildPipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.Api'
             project: 'SRD.Template2'
@@ -47,7 +47,7 @@ jobs:
           displayName: 'Download Artifact TestTemplate2.WorkerServices'
           inputs:
             buildType: 'specific'
-            definition: build_pipeline
+            definition: buildPipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.WorkerServices'
             project: 'SRD.Template2'
@@ -57,7 +57,7 @@ jobs:
           displayName: 'Download Artifact TestTemplate2.Migrations'
           inputs:
             buildType: 'specific'
-            definition: build_pipeline
+            definition: buildPipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.Migrations'
             project: 'SRD.Template2'
