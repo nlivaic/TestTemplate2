@@ -5,7 +5,7 @@ pr: none
 resources:
   pipelines:
   - pipeline: build_pipeline        # Used to reference the pipeline reference from other parts of the code.
-    source: testtemplate2_build_pipeline  	# This must match  the build pipeline name in ADO.
+    source: build_pipeline  	# This must match  the build pipeline name in ADO.
                                     # By default, pipelines are named after the ADO build pipeline name.
     trigger:
       branches:
@@ -37,7 +37,7 @@ jobs:
           displayName: 'Download Artifact TestTemplate2.Api'
           inputs:
             buildType: 'specific'
-            definition: testtemplate2_build_pipeline
+            definition: build_pipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.Api'
             project: 'SRD.Template2'
@@ -47,7 +47,7 @@ jobs:
           displayName: 'Download Artifact TestTemplate2.WorkerServices'
           inputs:
             buildType: 'specific'
-            definition: testtemplate2_build_pipeline
+            definition: build_pipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.WorkerServices'
             project: 'SRD.Template2'
@@ -57,7 +57,7 @@ jobs:
           displayName: 'Download Artifact TestTemplate2.Migrations'
           inputs:
             buildType: 'specific'
-            definition: testtemplate2_build_pipeline
+            definition: build_pipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.Migrations'
             project: 'SRD.Template2'
