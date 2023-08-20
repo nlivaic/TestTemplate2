@@ -37,7 +37,7 @@ jobs:
           displayName: 'Download Artifact TestTemplate2.Api'
           inputs:
             buildType: 'specific'
-            definition: buildPipeline
+            definition: build_pipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.Api'
             project: 'SRD.Template2'
@@ -47,7 +47,7 @@ jobs:
           displayName: 'Download Artifact TestTemplate2.WorkerServices'
           inputs:
             buildType: 'specific'
-            definition: buildPipeline
+            definition: build_pipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.WorkerServices'
             project: 'SRD.Template2'
@@ -57,7 +57,7 @@ jobs:
           displayName: 'Download Artifact TestTemplate2.Migrations'
           inputs:
             buildType: 'specific'
-            definition: buildPipeline
+            definition: build_pipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.Migrations'
             project: 'SRD.Template2'
