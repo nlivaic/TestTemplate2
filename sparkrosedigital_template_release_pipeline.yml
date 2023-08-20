@@ -40,7 +40,7 @@ jobs:
             definition: testtemplate2_build_pipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.Api'
-            project: 'TestTemplate2_ADO_Project'
+            project: 'SRD.Template2'
             downloadPath: '$(Pipeline.Workspace)/drop/TestTemplate2.Api'
 
         - task: DownloadPipelineArtifact@2
@@ -50,7 +50,7 @@ jobs:
             definition: testtemplate2_build_pipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.WorkerServices'
-            project: 'TestTemplate2_ADO_Project'
+            project: 'SRD.Template2'
             downloadPath: '$(Pipeline.Workspace)/drop/TestTemplate2.WorkerServices'
 
         - task: DownloadPipelineArtifact@2
@@ -60,7 +60,7 @@ jobs:
             definition: testtemplate2_build_pipeline
             buildVersionToDownload: 'latest'
             artifactName: 'drop.TestTemplate2.Migrations'
-            project: 'TestTemplate2_ADO_Project'
+            project: 'SRD.Template2'
             downloadPath: '$(Pipeline.Workspace)/drop/TestTemplate2.Migrations'
 
         - script: dotnet $(Pipeline.Workspace)/drop/TestTemplate1.Migrations/TestTemplate1.Migrations.dll "$(ConnectionStrings__TestTemplate1Db_Migrations_Connection)" "$(DB_USER)" "$(DB_PASSWORD)" "$(Pipeline.Workspace)/drop/TestTemplate1.Migrations"
