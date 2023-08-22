@@ -63,7 +63,7 @@ jobs:
             project: 'SRD.Template2'
             downloadPath: '$(Pipeline.Workspace)/drop/TestTemplate2.Migrations'
 
-        - script: dotnet $(Pipeline.Workspace)/drop/TestTemplate1.Migrations/TestTemplate1.Migrations.dll "$(ConnectionStrings__TestTemplate1Db_Migrations_Connection)" "$(DB_USER)" "$(DB_PASSWORD)" "$(Pipeline.Workspace)/drop/TestTemplate1.Migrations"
+        - script: dotnet $(Pipeline.Workspace)/drop/TestTemplate2.Migrations/TestTemplate2.Migrations.dll "$(ConnectionStrings__TestTemplate2Db_Migrations_Connection)" "$(DB_USER)" "$(DB_PASSWORD)" "$(Pipeline.Workspace)/drop/TestTemplate2.Migrations"
           displayName: 'Migrate database'
 
         - task: AzureWebApp@1
@@ -73,5 +73,5 @@ jobs:
             appType: 'webAppLinux'
             appName: 'wetest1web'
             resourceGroupName: '$(rg)'
-            package: '$(Pipeline.Workspace)/drop/TestTemplate1.Api/**/*.zip'
+            package: '$(Pipeline.Workspace)/drop/TestTemplate2.Api/**/*.zip'
             runtimeStack: 'DOTNETCORE|6.0'
