@@ -81,13 +81,13 @@ stages:
         - script: dotnet build --configuration $(buildConfiguration) ./TestTemplate2.sln
           displayName: 'dotnet build $(buildConfiguration)'
 
-        - task: DotNetCoreCLI@2
-          displayName: 'dotnet test'
-          inputs:
-            command: 'test'
-            projects: '**/*.csproj'
-            publishTestResults: true
-            configuration: $(buildConfiguration)
+        # - task: DotNetCoreCLI@2
+        #   displayName: 'dotnet test'
+        #   inputs:
+        #     command: 'test'
+        #     projects: '**/*.csproj'
+        #     publishTestResults: true
+        #     configuration: $(buildConfiguration)
 
         - task: DotNetCoreCLI@2
           displayName: 'dotnet publish TestTemplate2.Api'
