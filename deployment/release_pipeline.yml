@@ -4,7 +4,7 @@ pr: none
 # Pipeline resource defined as per https://bit.ly/3PhwhRk
 resources:
   pipelines:
-  - pipeline: buildPipeline  # Used to reference the pipeline reference from other parts of the code.
+  - pipeline: build_pipeline_alias  # Used to reference the pipeline reference from other parts of the code.
     source: build_pipeline        # This must match  the build pipeline name in ADO.
                                   # By default, pipelines are named after the ADO build pipeline name.
     trigger:
@@ -27,7 +27,7 @@ jobs:
           inputs:
             targetType: 'inline'
             script: |
-              $newVersion = "$(resources.pipeline.buildPipeline.runName)"
+              $newVersion = "$(resources.pipeline.build_pipeline_alias.runName)"
               [string] $buildName = "$($newVersion)"
               Write-Host "##vso[build.updatebuildnumber]$buildName"
 
