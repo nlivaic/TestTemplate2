@@ -71,7 +71,7 @@ jobs:
           inputs:
             azureSubscription: 'AzureConnection_TestTemplate2'
             appType: 'webAppLinux'
-            appName: 'wedevtesttemplate2web1'
+            appName: '$(app_service_web_name)'
             resourceGroupName: '$(rg)'
             package: '$(Pipeline.Workspace)/drop/TestTemplate2.Api/**/*.zip'
             runtimeStack: 'DOTNETCORE|6.0'
