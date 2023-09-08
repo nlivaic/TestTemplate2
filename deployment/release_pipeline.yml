@@ -12,8 +12,8 @@ resources:
       - master                      # Will get triggered whenever the source pipeline runs on master branch.
 
 jobs:
-- deployment: testtemplate2_deploy_to_appservice
-  displayName: TestTemplate2 Deploy to AppService
+- deployment: testtemplate2_deploy_to_azure
+  displayName: TestTemplate2 Deploy to Azure
   environment: production
   pool:
     vmImage: 'ubuntu-latest'
