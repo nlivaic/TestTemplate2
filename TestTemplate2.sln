@@ -56,9 +56,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestTemplate2.Common.Tests"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestTemplate2.Deployment", "TestTemplate2.Deployment", "{E288664C-FB95-4F1C-8518-6E05B531A6C7}"
 	ProjectSection(SolutionItems) = preProject
-		src\TestTemplate2.Deployment\app-service-plan.bicep = src\TestTemplate2.Deployment\app-service-plan.bicep
-		src\TestTemplate2.Deployment\resource-group.bicep = src\TestTemplate2.Deployment\resource-group.bicep
-		src\TestTemplate2.Deployment\sql-server.bicep = src\TestTemplate2.Deployment\sql-server.bicep
+		deployment\iac.bicep = deployment\iac.bicep
+		deployment\resource-group.bicep = deployment\resource-group.bicep
 		src\TestTemplate2.Deployment\variables.ps1 = src\TestTemplate2.Deployment\variables.ps1
 	EndProjectSection
 EndProject
